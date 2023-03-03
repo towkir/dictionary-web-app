@@ -1,12 +1,17 @@
 <template>
   <div id="app">
+    <Header/>
   </div>
 </template>
 
 <script>
+import Header from '@/components/Header.vue'
 
 export default {
   name: 'App',
+  components: {
+    Header,
+  }
 }
 </script>
 
@@ -18,5 +23,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  width: 780px;
+  margin: 60px auto;
 }
 </style>
