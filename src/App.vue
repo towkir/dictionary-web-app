@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header/>
+    <word-input />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
+import WordInput from '@/components/WordInput.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
+    WordInput,
   }
 }
 </script>
