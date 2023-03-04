@@ -19,13 +19,24 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+:root {
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+}
+
+:root[font-family="serif"] {
+  font-family: 'Lora', serif;
+}
+
+:root[font-family="monospace"] {
+  font-family: 'Inconsolata', monospace;
+}
+
+#app {
   width: 780px;
   margin: 60px auto;
 }
