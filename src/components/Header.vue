@@ -2,10 +2,7 @@
   <div class="header">
     <img src="@/assets/images/logo.svg" />
     <div class="settings">
-      <div class="font-selector">
-        Sans Serif
-        <img src="@/assets/images/icon-arrow-down.svg"/> 
-      </div>
+      <font-selector />
       <div class="vertical-separator"></div>
       <div class="theme-toggler">
         <input type="checkbox">
@@ -16,7 +13,9 @@
 </template>
 
 <script>
+import FontSelector from './FontSelector.vue'
 export default {
+  components: { FontSelector },
   name: 'Header',
 }
 </script>
@@ -26,5 +25,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.header .settings {
+  display: flex;
+  align-items: center;
+}
+
+.header .settings .vertical-separator {
+  width: 1px;
+  height: 34px;
+  background-color: var(--grey-variant-2);
+  margin: 0 25px;
 }
 </style>
