@@ -4,7 +4,12 @@
       type="text"
       placeholder="Search for any word..."
       v-model="word"
+      :class="{ error: attemptedEmptySearch }"
+      @keypress="validateWordAndSearch"
     />
+    <div class="placeholder">
+      <span v-if="attemptedEmptySearch" class="error">Whoops, can't be empty…</span>
+    </div>
   </div>
 </template>
 
@@ -14,8 +19,20 @@ export default {
   data() {
     return {
       word: '',
+      attemptedEmptySearch: false,
     }
   },
+  methods: {
+    validateWordAndSearch(event) {
+      this.attemptedEmptySearch = false;
+      if (event.keyCode === 13) {
+        this.attemptedEmptySearch = !this.word.length;
+        if (!this.attemptedEmptySearch) {
+          this.$emit('search', this.word)
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -32,6 +49,7 @@ export default {
   font-size: 1.4rem;
   font-weight: 700;
   padding: 20px 24px;
+  margin-bottom: 10px;
   background-image: url('~@/assets/images/icon-search.svg');
   background-repeat: no-repeat;
   background-position: calc(100% - 20px) center;
@@ -43,5 +61,17 @@ export default {
 .input-wrapper input[type="text"]:focus {
   outline: none;
   border-color: var(--purple);
+}
+
+.input-wrapper input[type="text"].error {
+  border-color: var(--red);
+}
+
+.input-wrapper .placeholder {
+  min-height: 20px;
+}
+
+.input-wrapper span.error {
+  color: var(--red);
 }
 </style>
