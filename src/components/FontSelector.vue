@@ -74,6 +74,8 @@ export default {
 
 .font-selector .font-options {
   position: absolute;
+  background-color: var(--body-background);
+  transition: 0.3s ease-in-out;
   width: 180px;
   top: calc(100% + 18px);
   right: 0;
