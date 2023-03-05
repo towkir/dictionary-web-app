@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import FontSelector from './FontSelector.vue'
-import ThemeToggler from './ThemeToggler.vue'
+import FontSelector from '@/components/FontSelector.vue'
+import ThemeToggler from '@/components/ThemeToggler.vue'
 export default {
   components: { FontSelector, ThemeToggler },
   name: 'Header',

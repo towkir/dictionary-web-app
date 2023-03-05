@@ -34,8 +34,8 @@ export default {
   --grey-variant-1: #757575;
   --grey-variant-2: #E9E9E9;
   --grey-variant-3: #F4F4F4;
+  --grey-variant-transparent: #0000001A;
   --white: #FFFFFF;
-  --shadow-color: #0000001A;
 }
 
 :root,
@@ -55,11 +55,13 @@ export default {
 :root[data-theme="light"] {
   --body-background: var(--white);
   --text-color: var(--black-variant-1);
+  --shadow-color: var(--grey-variant-transparent);
 }
 
 :root[data-theme="dark"] {
   --body-background: var(--black-variant-1);
   --text-color: var(--white);
+  --shadow-color: var(--purple);
 }
 
 body {
