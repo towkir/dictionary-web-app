@@ -20,7 +20,6 @@ export default {
 
 <style>
 :root {
-  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 14px;
@@ -39,12 +38,34 @@ export default {
   --shadow-color: #0000001A;
 }
 
-:root[font-family="serif"] {
+:root,
+:root[data-font="sans-serif"] {
+  font-family: 'Inter', sans-serif;
+}
+
+:root[data-font="serif"] {
   font-family: 'Lora', serif;
 }
 
-:root[font-family="monospace"] {
+:root[data-font="monospace"] {
   font-family: 'Inconsolata', monospace;
+}
+
+:root,
+:root[data-theme="light"] {
+  --body-background: var(--white);
+  --text-color: var(--black-variant-1);
+}
+
+:root[data-theme="dark"] {
+  --body-background: var(--black-variant-1);
+  --text-color: var(--white);
+}
+
+body {
+  background-color: var(--body-background);
+  color: var(--text-color);
+  transition: 0.3s ease-in-out;
 }
 
 #app {

@@ -45,7 +45,7 @@ export default {
       this.fontPickerOpen = !this.fontPickerOpen;
     },
     applyFont(font) {
-      window.document.getElementsByTagName('html')[0].setAttribute('font-family', font);
+      document.documentElement.setAttribute('data-font', font);
     },
     chooseFont(font) {
       this.selectedFont = font;
