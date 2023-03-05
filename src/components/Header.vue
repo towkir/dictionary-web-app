@@ -4,18 +4,16 @@
     <div class="settings">
       <font-selector />
       <div class="vertical-separator"></div>
-      <div class="theme-toggler">
-        <input type="checkbox">
-        <img src="@/assets/images/icon-moon.svg" />
-      </div>
+      <theme-toggler />
     </div>
   </div>
 </template>
 
 <script>
 import FontSelector from './FontSelector.vue'
+import ThemeToggler from './ThemeToggler.vue'
 export default {
-  components: { FontSelector },
+  components: { FontSelector, ThemeToggler },
   name: 'Header',
 }
 </script>
