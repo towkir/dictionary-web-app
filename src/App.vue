@@ -56,12 +56,14 @@ export default {
   --body-background: var(--white);
   --text-color: var(--black-variant-1);
   --shadow-color: var(--grey-variant-transparent);
+  --input-bg: var(--grey-variant-3)
 }
 
 :root[data-theme="dark"] {
   --body-background: var(--black-variant-1);
   --text-color: var(--white);
   --shadow-color: var(--purple);
+  --input-bg: var(--black-variant-2)
 }
 
 body {
