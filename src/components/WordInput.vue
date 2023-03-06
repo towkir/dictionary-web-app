@@ -37,6 +37,10 @@ export default {
 </script>
 
 <style>
+.input-wrapper {
+  margin-bottom: 50px;
+}
+
 .input-wrapper input[type="text"] {
   appearance: none;
   font-family: inherit;

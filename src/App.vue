@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <word-input />
+    <word-input @search="searchWord"/>
   </div>
 </template>
 
@@ -14,6 +14,30 @@ export default {
   components: {
     Header,
     WordInput,
+  },
+  data() {
+    return {
+      baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries/en/',
+      wordDefinitions: [],
+      errorDetails: {},
+    }
+  },
+  methods: {
+    searchWord(word) {
+      this.wordDefinitions = [];
+      this.errorDetails = {};
+      fetch(`${this.baseUrl}${word}`)
+        .then((response) => {
+          let status = response.ok;
+          response.json().then((data) => {
+            if (status) {
+              this.wordDefinitions = data;
+            } else {
+              this.errorDetails = data;
+            }
+          })
+        })
+    },
   }
 }
 </script>
