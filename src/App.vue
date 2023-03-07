@@ -109,6 +109,14 @@ body {
 #app {
   width: 100%;
   max-width: 780px;
-  margin: 60px auto;
+  margin: 0 auto;
+  padding: 50px 40px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 570px) {  
+  #app {
+    padding: 30px 25px;
+  }
 }
 </style>
