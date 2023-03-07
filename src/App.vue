@@ -2,18 +2,21 @@
   <div id="app">
     <Header/>
     <word-input @search="searchWord"/>
+    <word-definition :definition="wordDefinitions[0]" />
   </div>
 </template>
 
 <script>
 import Header from '@/components/Header.vue'
 import WordInput from '@/components/WordInput.vue'
+import WordDefinition from '@/components/WordDefinition.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     WordInput,
+    WordDefinition,
   },
   data() {
     return {
@@ -43,6 +46,11 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,14 +88,16 @@ export default {
   --body-background: var(--white);
   --text-color: var(--black-variant-1);
   --shadow-color: var(--grey-variant-transparent);
-  --input-bg: var(--grey-variant-3)
+  --input-bg: var(--grey-variant-3);
+  --hr-color: var(--grey-variant-2);
 }
 
 :root[data-theme="dark"] {
   --body-background: var(--black-variant-1);
   --text-color: var(--white);
   --shadow-color: var(--purple);
-  --input-bg: var(--black-variant-2)
+  --input-bg: var(--black-variant-2);
+  --hr-color: var(--black-variant-4);
 }
 
 body {
@@ -97,7 +107,8 @@ body {
 }
 
 #app {
-  width: 780px;
+  width: 100%;
+  max-width: 780px;
   margin: 60px auto;
 }
 </style>

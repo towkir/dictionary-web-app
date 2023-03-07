@@ -38,7 +38,7 @@ export default {
 
 <style>
 .input-wrapper {
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 
 .input-wrapper input[type="text"] {
