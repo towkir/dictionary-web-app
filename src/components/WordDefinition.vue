@@ -3,10 +3,10 @@
     <div class="word-main">
       <div class="word-and-phonetic">
         <h1>{{definition.word}}</h1>
-        <p class="phonetics">{{definition.phonetic}}</p>
+        <p class="phonetics">{{phonetic.text}}</p>
       </div>
-      <div class="pronounce">
-
+      <div class="pronounce" v-if="phonetic.audio">
+        <speak-word :url="phonetic.audio"/>
       </div>
     </div>
     <word-meaning
@@ -29,13 +29,23 @@
 </template>
 
 <script>
-import WordMeaning from '@/components/WordMeaning.vue'
+import WordMeaning from '@/components/WordMeaning.vue';
+import SpeakWord from '@/components/SpeakWord.vue';
+
 export default {
   name: 'WordDefinition',
-  components: { WordMeaning },
+  components: { WordMeaning, SpeakWord },
   props: {
     definition: {
       type: [Object, undefined],
+    }
+  },
+  computed: {
+    phonetic() {
+      const phonetics = this.definition.phonetics ? this.definition.phonetics : [];
+      return phonetics.length
+        ? phonetics.find(item => item.audio)
+        : { text: this.definition.phonetic, audio: '' };
     }
   },
 }
@@ -44,6 +54,9 @@ export default {
 <style>
 .word-definition-wrapper .word-main {
   margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .word-definition-wrapper .word-main .word-and-phonetic h1 {
