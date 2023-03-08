@@ -1,0 +1,94 @@
+<template>
+  <div class="audio-and-control">
+    <div
+      class="big-button"
+      :class="{playing : playing}"
+      @click="playAudio"
+    >
+      <div class="play-icon"></div>
+      <div class="pause-icon"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    url: {
+      type: String,
+    }
+  },
+  data() {
+    return {
+      playing: false,
+    }
+  },
+  methods: {
+    playAudio() {
+      this.playing = !this.playing;
+    },
+  },
+};
+</script>
+
+<style>
+.audio-and-control .big-button {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: var(--purple-alpha);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.audio-and-control .big-button:hover {
+  background-color: var(--purple);
+}
+
+.audio-and-control .big-button .play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  border-left-color: var(--purple);
+  border-left-width: 21px;
+  border-top-width: 10.5px;
+  border-bottom-width: 10.5px;
+  transform: translate(calc(-50% + 2px), -50%);
+  transition: 0.3s ease-in-out;
+}
+
+.audio-and-control .big-button:hover .play-icon {
+  border-left-color: var(--white);
+}
+
+.audio-and-control .big-button .pause-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 5px;
+  height: 21px;
+  border: 0 solid var(--purple);
+  border-left-width: 8px;
+  border-right-width: 8px;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  display: none;
+}
+
+.audio-and-control .big-button:hover .pause-icon {
+  border-color: var(--white);
+}
+
+.audio-and-control .big-button.playing .play-icon {
+  display: none;
+}
+
+.audio-and-control .big-button.playing .pause-icon {
+  display: block;
+}
+
+</style>

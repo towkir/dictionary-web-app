@@ -58,6 +58,7 @@ export default {
   line-height: 17px;
   font-weight: 400;
   --purple: #A445ED;
+  --purple-alpha: #A445ED40;
   --red: #FF5252;
   --black-variant-1: #050505;
   --black-variant-2: #1F1F1F;
