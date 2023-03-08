@@ -59,6 +59,7 @@ export default {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
+  user-select: none;
 }
 
 .audio-and-control .big-button:hover {

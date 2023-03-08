@@ -60,6 +60,7 @@ export default {
 .font-selector {
   cursor: pointer;
   position: relative;
+  user-select: none;
 }
 
 .font-selector .selected-font {

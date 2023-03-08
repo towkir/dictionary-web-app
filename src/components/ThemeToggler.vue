@@ -38,6 +38,7 @@ export default {
 .theme-toggler {
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 label[for="toggler-checkbox"] {
