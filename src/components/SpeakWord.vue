@@ -8,6 +8,9 @@
       <div class="play-icon"></div>
       <div class="pause-icon"></div>
     </div>
+    <audio id="wordPlayer">
+      <source :src="url">
+    </audio>
   </div>
 </template>
 
@@ -24,14 +27,30 @@ export default {
     }
   },
   methods: {
-    playAudio() {
-      this.playing = !this.playing;
+    stop() {
+      this.playing = false;
     },
+    playAudio() {
+      const player = document.getElementById('wordPlayer');
+      if (!this.playing) {
+        player.play();
+      } else {
+        player.pause();
+      } 
+      this.playing = !this.palying;
+    }
   },
+  mounted() {
+    document.getElementById('wordPlayer').addEventListener('ended', this.stop);
+  }
 };
 </script>
 
 <style>
+.audio-and-control #player {
+  display: none;
+}
+
 .audio-and-control .big-button {
   width: 75px;
   height: 75px;
