@@ -60,6 +60,7 @@ export default {
   cursor: pointer;
   position: relative;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .audio-and-control .big-button:hover {

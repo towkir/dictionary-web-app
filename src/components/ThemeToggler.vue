@@ -39,6 +39,7 @@ export default {
   display: flex;
   align-items: center;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 label[for="toggler-checkbox"] {
