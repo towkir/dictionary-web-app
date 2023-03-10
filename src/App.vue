@@ -3,6 +3,7 @@
     <Header/>
     <word-input @search="searchWord"/>
     <word-definition :definition="wordDefinitions[0]" />
+    <word-not-found :message="errorDetails" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Header from '@/components/Header.vue'
 import WordInput from '@/components/WordInput.vue'
 import WordDefinition from '@/components/WordDefinition.vue'
+import WordNotFound from '@/components/WordNotFound.vue'
 
 export default {
   name: 'App',
@@ -17,6 +19,7 @@ export default {
     Header,
     WordInput,
     WordDefinition,
+    WordNotFound,
   },
   data() {
     return {
