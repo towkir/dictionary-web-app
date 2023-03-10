@@ -16,6 +16,9 @@
         </span>
       </li>
     </ul>
+    <h5 v-if="meaning.synonyms.length">
+      Synonyms <span>{{meaning.synonyms.join(', ')}}</span>
+    </h5>
   </div>
 </template>
 
@@ -72,8 +75,15 @@ export default {
   margin-bottom: 24px;
 }
 
+.word-meaning h5 span {
+  color: var(--purple);
+  font-weight: 700;
+  margin-left: 20px;
+}
+
 .word-meaning ul.meaning-list {
   margin-left: 22px;
+  margin-bottom: 40px;
   list-style: none;
 }
 
