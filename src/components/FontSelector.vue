@@ -46,13 +46,27 @@ export default {
     },
     applyFont(font) {
       document.documentElement.setAttribute('data-font', font);
+      localStorage.setItem('dictionary-font', font);
     },
     chooseFont(font) {
       this.selectedFont = font;
       this.applyFont(font.value);
       this.fontPickerOpen = false;
     },
-  }
+    getAppliedFont() {
+      const appliedFont = localStorage.getItem('dictionary-font');
+      let validFont;
+      if (appliedFont) {
+        validFont = this.fontOptions.find(item => item.value === appliedFont);
+      }
+      if (validFont) {
+        this.chooseFont(validFont);
+      }
+    },
+  },
+  beforeMount() {
+    this.getAppliedFont();
+  },
 }
 </script>
 
