@@ -78,4 +78,9 @@ export default {
 .input-wrapper span.error {
   color: var(--red);
 }
+@media screen and (max-width: 570px) {
+  .input-wrapper input[type="text"] {
+    padding: 16px 24px;
+  }
+}
 </style>

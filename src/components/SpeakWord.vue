@@ -111,4 +111,21 @@ export default {
   display: block;
 }
 
+@media screen and (max-width: 570px) {
+  .audio-and-control .big-button {
+    width: 48px;
+    height: 48px;
+  }
+  .audio-and-control .big-button .play-icon {
+    border-left-width: 13px;
+    border-top-width: 6.5px;
+    border-bottom-width: 6.5px;
+  }
+  .audio-and-control .big-button .pause-icon {
+    width: 3px;
+    height: 13px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+  }
+}
 </style>

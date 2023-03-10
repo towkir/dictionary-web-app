@@ -115,7 +115,12 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 570px) {  
+@media screen and (max-width: 570px) {
+  :root {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  
   #app {
     padding: 30px 25px;
   }

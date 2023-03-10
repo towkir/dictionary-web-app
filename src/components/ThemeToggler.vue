@@ -83,4 +83,10 @@ label[for="toggler-checkbox"] input[type="checkbox"]:checked + span.toggler span
 .theme-toggler svg.icon-moon.active path {
   stroke: var(--purple);
 }
+
+@media screen and (max-width: 570px) {
+  label[for="toggler-checkbox"] input[type="checkbox"] + span.toggler {
+    margin-right: 12px;
+  }
+}
 </style>

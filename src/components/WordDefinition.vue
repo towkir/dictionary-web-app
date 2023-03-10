@@ -97,4 +97,11 @@ export default {
   vertical-align: middle;
   margin-left: 10px;
 }
+
+@media screen and (max-width: 570px) {
+  .word-definition-wrapper .word-main .word-and-phonetic h1 {
+    font-size: 2.56rem;
+    line-height: 3.2rem;
+  }
+}
 </style>

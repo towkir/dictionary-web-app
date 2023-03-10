@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="@/assets/images/logo.svg" />
+    <img src="@/assets/images/logo.svg" class="logo" />
     <div class="settings">
       <font-selector />
       <div class="vertical-separator"></div>
@@ -36,5 +36,19 @@ export default {
   height: 34px;
   background-color: var(--grey-variant-2);
   margin: 0 25px;
+}
+
+@media screen and (max-width: 570px) {
+  .header {
+    margin-bottom: 30px;
+  }
+
+  .header img.logo {
+    max-width: 28px;
+  }
+  
+  .header .settings .vertical-separator {
+    margin: 0 16px;
+  }
 }
 </style>

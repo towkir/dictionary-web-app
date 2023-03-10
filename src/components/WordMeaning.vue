@@ -112,4 +112,9 @@ export default {
   color: var(--grey-variant-1);
   margin-top: 12px;
 }
+@media screen and (max-width: 570px) {
+  .word-meaning .part-of-speech {
+    margin-bottom: 20px;
+  }
+}
 </style>
