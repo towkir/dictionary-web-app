@@ -104,6 +104,26 @@ export default {
   --hr-color: var(--black-variant-4);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-background: var(--black-variant-1);
+    --text-color: var(--white);
+    --shadow-color: var(--purple);
+    --input-bg: var(--black-variant-2);
+    --hr-color: var(--black-variant-4);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --body-background: var(--white);
+    --text-color: var(--black-variant-1);
+    --shadow-color: var(--grey-variant-transparent);
+    --input-bg: var(--grey-variant-3);
+    --hr-color: var(--grey-variant-2);
+  }
+}
+
 body {
   background-color: var(--body-background);
   color: var(--text-color);

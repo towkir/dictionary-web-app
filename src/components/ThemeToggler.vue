@@ -5,7 +5,7 @@
         type="checkbox"
         id="toggler-checkbox"
         v-model="darkThemeEnabled"
-        @change="toggleTheme"
+        @change="toggleTheme(false)"
       >
       <span class="toggler">
         <span class="toggler-button"></span>
@@ -26,10 +26,30 @@ export default {
     }
   },
   methods: {
-    toggleTheme() {
-      const theme = this.darkThemeEnabled ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', theme);
+    toggleTheme(theme) {
+      let decidedTheme;
+      if (theme) {
+        this.darkThemeEnabled = theme === 'dark';
+        decidedTheme = theme;
+      } else {
+        decidedTheme = this.darkThemeEnabled ? 'dark' : 'light';
+        localStorage.setItem('dictionary-theme', decidedTheme);
+      }
+      document.documentElement.setAttribute('data-theme', decidedTheme);
     },
+    getPreferredTheme() {
+      const userSetTheme = localStorage.getItem('dictionary-theme');
+      let decidedTheme;
+      if (userSetTheme) {
+        decidedTheme = userSetTheme;
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        decidedTheme = 'dark'
+      }
+      this.toggleTheme(decidedTheme);
+    }
+  },
+  beforeMount() {
+    this.getPreferredTheme();
   },
 }
 </script>
