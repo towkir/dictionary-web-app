@@ -2,7 +2,7 @@
   <div class="font-selector">
     <div
       class="selected-font"
-      @click="toggleFontPicker"
+      @click.stop="toggleFontPicker"
     >
       {{ selectedFont.label }}<svg class="icon-dropdown" xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8"><path fill="none" stroke="#A445ED" stroke-width="1.5" d="m1 1 6 6 6-6"/></svg>
     </div>
@@ -43,6 +43,11 @@ export default {
     toggleFontPicker() {
       this.fontPickerOpen = !this.fontPickerOpen;
     },
+    hideFontPicker() {
+      if (this.fontPickerOpen) {
+        this.fontPickerOpen = false;
+      }
+    },
     applyFont(font) {
       document.documentElement.setAttribute('data-font', font);
       localStorage.setItem('dictionary-font', font);
@@ -65,6 +70,7 @@ export default {
   },
   beforeMount() {
     this.getAppliedFont();
+    window.addEventListener('click', this.hideFontPicker);
   },
 }
 </script>
