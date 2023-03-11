@@ -36,8 +36,8 @@ export default {
         player.play();
       } else {
         player.pause();
-      } 
-      this.playing = !this.palying;
+      }
+      this.playing = !this.playing;
     }
   },
   mounted() {
