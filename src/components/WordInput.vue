@@ -28,7 +28,7 @@ export default {
       if (event.keyCode === 13) {
         this.attemptedEmptySearch = !this.word.length;
         if (!this.attemptedEmptySearch) {
-          this.$emit('search', this.word)
+          this.$emit('search', this.word);
         }
       }
     }

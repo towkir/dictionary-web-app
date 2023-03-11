@@ -43,7 +43,7 @@ export default {
   computed: {
     phonetic() {
       const phonetics = this.definition.phonetics ? this.definition.phonetics : [];
-      const phoneticsWithAudio = phonetics.find(item => item.audio)
+      const phoneticsWithAudio = phonetics.find(item => item.audio);
       return phoneticsWithAudio || { text: this.definition.phonetic, audio: '' };
     }
   },

@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
-import WordInput from '@/components/WordInput.vue'
-import WordDefinition from '@/components/WordDefinition.vue'
-import WordNotFound from '@/components/WordNotFound.vue'
+import Header from '@/components/Header.vue';
+import WordInput from '@/components/WordInput.vue';
+import WordDefinition from '@/components/WordDefinition.vue';
+import WordNotFound from '@/components/WordNotFound.vue';
 
 export default {
   name: 'App',
@@ -144,7 +144,7 @@ body {
     font-size: 12px;
     line-height: 16px;
   }
-  
+
   #app {
     padding: 30px 25px;
   }

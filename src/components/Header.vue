@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import FontSelector from '@/components/FontSelector.vue'
-import ThemeToggler from '@/components/ThemeToggler.vue'
+import FontSelector from '@/components/FontSelector.vue';
+import ThemeToggler from '@/components/ThemeToggler.vue';
 export default {
   components: { FontSelector, ThemeToggler },
   name: 'Header',
@@ -46,7 +46,7 @@ export default {
   .header img.logo {
     max-width: 28px;
   }
-  
+
   .header .settings .vertical-separator {
     margin: 0 16px;
   }
