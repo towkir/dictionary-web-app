@@ -136,6 +136,7 @@ body {
   margin: 0 auto;
   padding: 50px 40px;
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 570px) {
