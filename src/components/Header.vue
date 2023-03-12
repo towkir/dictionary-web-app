@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <img src="@/assets/images/logo.svg" class="logo" />
+    <img src="@/assets/images/logo.svg" class="logo" alt="logo" />
     <div class="settings">
       <font-selector />
       <div class="vertical-separator"></div>
