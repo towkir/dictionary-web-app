@@ -32,7 +32,7 @@ Github Repo can be found [here](https://github.com/towkir/dictionary-web-app) (i
 #### Here is the part that every vue project readme is filled with 
 
 ```
-#Project setup
+# Project setup
 npm install
 
 # Compiles and hot-reloads for development
